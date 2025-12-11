@@ -1,4 +1,4 @@
-/* App.css */
+/* src/App.css */
 :root {
   --text-dark: #333;
   --text-gray: #666;
@@ -30,8 +30,6 @@ body {
 .header {
   padding: 20px;
   background: white;
-  /* 必要であれば境界線を追加 */
-  /* border-bottom: 1px solid var(--border-color); */
 }
 
 .logo {
@@ -41,12 +39,39 @@ body {
   color: var(--text-dark);
 }
 
-/* Hero Section */
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: white;
+  border-top: 1px solid #fafafa;
+}
+
+.footer-logo {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.social-links span {
+  cursor: pointer;
+}
+
+/* Home Page */
 .hero-image {
   width: 100%;
   height: 180px;
   background-color: #ddd;
-  /* ↓ここにメインビジュアルの画像URLを入れてください */
   background-image: url('https://placehold.jp/600x300.png?text=Main+Visual');
   background-size: cover;
   background-position: center;
@@ -68,7 +93,6 @@ body {
   margin: 0;
 }
 
-/* Grid Layout */
 .menu-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -77,9 +101,9 @@ body {
   margin-bottom: 30px;
 }
 
+/* Menu Card Component */
 .menu-card {
   background: #f5f5f7;
-  /* 薄いグレー */
   border-radius: 12px;
   padding: 20px;
   display: flex;
@@ -112,15 +136,12 @@ body {
   line-height: 1.4;
 }
 
-/* 画像プレースホルダー用のスタイル */
 .card-image {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  /* 画像の比率を保つ */
   border-radius: 8px;
   background-color: white;
-  /* 透過画像の背景用 */
 }
 
 /* LINE Banner */
@@ -167,37 +188,7 @@ body {
   text-decoration: none;
 }
 
-/* Footer */
-.footer {
-  margin-top: auto;
-  padding: 40px 20px;
-  text-align: center;
-  background: white;
-  /* グラデーション廃止 */
-  /* 必要であれば境界線を追加 */
-  /* border-top: 1px solid var(--border-color); */
-}
-
-.footer-logo {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  color: var(--text-dark);
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  font-size: 0.8rem;
-  color: #999;
-}
-
-.social-links span {
-  cursor: pointer;
-}
-
-/* AI Chat Screen */
+/* Chat Page */
 .chat-screen {
   display: flex;
   flex-direction: column;
