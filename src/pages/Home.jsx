@@ -1,20 +1,26 @@
+// src/pages/Home.jsx
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // フックをインポート
+import { useNavigate } from 'react-router-dom';
 import MenuCard from '../components/MenuCard';
 
-const IMAGES = {
-    info: "https://placehold.jp/150x150.png?text=Info",
-    community: "https://placehold.jp/150x150.png?text=Comm",
-    safety: "https://placehold.jp/150x150.png?text=Safe",
-    ai: "https://placehold.jp/150x150.png?text=AI",
-};
+// --- ローカル画像のインポート ---
+// 写真のデータ元https://pictomuseum.com/
+import heroImg from '../assets/hero.jpg';     // メインビジュアル
+import infoImg from '../assets/info.png';      // 基本情報
+import communityImg from '../assets/community.png'; // コミュニティ
+import safetyImg from '../assets/safety.png';    // 安心安全
+import aiImg from '../assets/ai.png';        // AIサポート
 
 const Home = () => {
-    const navigate = useNavigate(); // ページ遷移用の関数
+    const navigate = useNavigate();
 
     return (
         <>
-            <div className="hero-image"></div>
+            {/* ヒーローセクション：インラインスタイルで背景画像を設定 */}
+            <div
+                className="hero-image"
+                style={{ backgroundImage: `url(${heroImg})` }}
+            ></div>
 
             <div className="hero-text">
                 <h1>AmaLife for Fukuoka</h1>
@@ -25,25 +31,25 @@ const Home = () => {
                 <MenuCard
                     title="基本情報"
                     description="行政に関するカレンダー、手続き、生活サポートに関する情報"
-                    imageSrc={IMAGES.info}
+                    imageSrc={infoImg} // インポートした変数を使用
                     onClick={() => navigate('/info')}
                 />
                 <MenuCard
                     title="コミュニティ"
                     description="イベントの案内、相談窓口など"
-                    imageSrc={IMAGES.community}
+                    imageSrc={communityImg} // インポートした変数を使用
                     onClick={() => navigate('/community')}
                 />
                 <MenuCard
                     title="安心安全サポート"
                     description="健康医療のサポート、災害時の情報、通知など"
-                    imageSrc={IMAGES.safety}
+                    imageSrc={safetyImg} // インポートした変数を使用
                     onClick={() => navigate('/safety')}
                 />
                 <MenuCard
-                    title="AIサポート（仮）"
-                    description="、チャットボット"
-                    imageSrc={IMAGES.ai}
+                    title="AIサポート"
+                    description="AIによるチャットボット"
+                    imageSrc={aiImg} // インポートした変数を使用
                     onClick={() => navigate('/chat')}
                 />
             </div>
